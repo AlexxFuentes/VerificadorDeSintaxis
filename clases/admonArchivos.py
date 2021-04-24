@@ -7,11 +7,15 @@ r --> Abre un fichero para su lectura. Es el valor predeterminado, el puntero de
 
 a--> Modo añadir. Abre un fichero para añadir contenido posicionándose al final, en el caso de no 
     existir el archivo lo crea.
+
+@Alex Fuentes
+fecha: 28/03/2021
 """
 
 class Archivos:
     
     def file_manipulation(self, _nombreArchivo, _modo):
+        '''Abrir un archivo en el modo indicado'''
         try:
             with open (_nombreArchivo, _modo) as file:
                 return file
@@ -20,29 +24,22 @@ class Archivos:
             return
 
     def file_write(self, _nombreArchivo, _texto):
+        '''Agrega texto al final del archivo y si no existe lo crea'''
         with open(_nombreArchivo,"w") as file:
             file.write(_texto)
 
     def add_text(self, _nombreArchivo, _texto):
+        '''Agrega texto al final del archivo y si no existe lo crea'''
         with open(_nombreArchivo,"a") as file:
             file.write(_texto)
     
     def read_file(self, _nombreArchivo):
+        '''abre un archivo en modo lectura'''
         with open (_nombreArchivo, "r") as file:
             cont = 0
             for linea in file:
                 cont += 1
                 print(cont,linea)
-        
-
-"""
-f = Archivos()
-
-f.file_manipulation("prueba.txt","w")
-
-f.file_write("prueba.txt", "prueba de texto \n")
-f.add_text("prueba.txt", "segunda prueba de texto \n")
-f.add_text("prueba.txt", "tercera prueba de texto \n")
-
-f.read_file("prueba.txt")
-"""
+    
+    def openFile(self, _nombreArchivo):
+        return open(_nombreArchivo, "r")  

@@ -1,21 +1,22 @@
+"""
+@autor Alex Fuentes
+Fecha: 28/03/2021
+"""
+
 from clases.stack import Stack
-from clases.admonArchivos import Archivos
+from clases.deque import Deque
 
-def verifica_Caracteres(cadena):
-    'Funcion que elimina las palabras que estan entre simbolos y retorna una cadena solo con los simbolos'
-    caracteres = 'abcdefghijklmnopqrstu'
-    simbolo = '({""})'
+def seleccionSimbolos(_cola: Deque):
+    'selecciona los simbolos que extrajo de la cola'
+    simbolos = '{()}'
     CadenaSimbolos = ""
-    tamCadena = len(cadena)
-    for i in range(0,tamCadena):
-        if cadena[i] in caracteres:
-            pass
-        elif cadena[i] in simbolo:
-            CadenaSimbolos += cadena[i]
-
+    for _item in range(0, _cola.size()):
+        caracter = _cola.remove_front()
+        if caracter in simbolos:
+            CadenaSimbolos += caracter 
     return CadenaSimbolos
 
-def Verificador(cadena):
+def VerificadorSimbolos(cadena):
     'Funcion que verifica si los simbolos son pares'
     p = Stack()
     balanceados = True
@@ -24,7 +25,7 @@ def Verificador(cadena):
     while indice < len(cadena) and balanceados:
         simbolo = cadena[indice]
         
-        if simbolo in cadena:
+        if simbolo in "([{":
             p.push(simbolo)                             # Agrega un elemento
         else:
             if p.is_empty():                            # Comprueba si la pila está vacía
@@ -32,8 +33,7 @@ def Verificador(cadena):
             else:
                 tope = p.pop()                          # Extrae (elimina) un elemento
                 if not parejas(tope,simbolo):
-                    balanceados = False
-                        
+                    balanceados = False             
         indice = indice + 1
 
     if balanceados and p.is_empty():

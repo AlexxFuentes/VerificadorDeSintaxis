@@ -1,3 +1,7 @@
+"""
+@autor: Alex Fuentes
+fecha: 24/04/2021
+"""
 class Stack:
     """Implementación de pila como una lista"""
 
@@ -14,8 +18,12 @@ class Stack:
         self._items.append(item)
 
     def pop(self):
-        """Eliminar un artículo de la pila"""
-        return self._items.pop()
+        """ Devuelve el elemento tope y lo elimina de la pila.
+        Si la pila está vacía levanta una excepción. """
+        try:
+            return self._items.pop()
+        except IndexError:
+            raise ValueError("La pila está vacía")
 
     def peek(self):
         """Obtenga el valor del elemento superior de la pila"""
