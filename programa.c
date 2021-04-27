@@ -1,6 +1,6 @@
 #include<stdio.h>
 main(){
-    int x, y;
+    int x = 10, y = 30;
     printf("Escribe el primer numero:");
     scanf("%d", &x);
     printf("Escribe el segundo numero:");
