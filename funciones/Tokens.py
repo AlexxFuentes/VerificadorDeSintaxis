@@ -39,7 +39,29 @@ def tokensCD(palabra):
                 'unsigned':"indica a la variable que no llevara signo",
                 'void':"no existencia o no atribución de un tipo en una variable o sentencia",
                 'volatile':"variable que modifica el programa",
-                'while':"Bucle while"
+                'while':"Bucle while",
+                'include':'Incluye las declaraciones de otroa fichero en una declaracion',
+                'stdio':'Biblioteca',
+                'fstream':'Biblioteca',
+                'iosfwd':'Biblioteca',
+                'iostream':'Biblioteca',
+                'list':'Biblioteca',
+                'math':'Biblioteca',
+                'memory':'Biblioteca',
+                'numeric':'Biblioteca',
+                'ostream':'Biblioteca',
+                'queue':'Biblioteca',
+                'stdlib':'Biblioteca',
+                'string':'Biblioteca',
+                'typeinfo':'Biblioteca',
+                'vector':'Biblioteca',
+                'forward_list':'Biblioteca',
+                'list':'Biblioteca',
+                'iterator':'Biblioteca',
+                'time':'Biblioteca',
+                'thread':'Biblioteca',
+
+
     }
     if palabra in dict1.keys():
         return True
