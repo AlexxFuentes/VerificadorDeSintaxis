@@ -6,15 +6,18 @@ Fecha: 28/03/2021
 from clases.stack import Stack
 from clases.deque import Deque
 
+"""
 def seleccionSimbolos(_cola: Deque):
     'selecciona los simbolos que extrajo de la cola'
+    tamCola = _cola.size()
     simbolos = '{()}'
     CadenaSimbolos = ""
-    for _item in range(0, _cola.size()):
+    for _item in range(0, tamCola):
         caracter = _cola.remove_front()
         if caracter in simbolos:
             CadenaSimbolos += caracter 
     return CadenaSimbolos
+"""
 
 def VerificadorSimbolos(cadena):
     'Funcion que verifica si los simbolos son pares'

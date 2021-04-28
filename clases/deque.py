@@ -2,6 +2,9 @@
 @autor: Alex Fuentes
 fecha: 24/04/2021
 """
+from clases.stack import Stack
+
+
 class Deque:
     """Implementación de la cola como una lista"""
 
@@ -19,7 +22,7 @@ class Deque:
 
     def add_rear(self, item):
         """Agrega un elemento al final de la cola."""
-        self._items.insert(0, item)
+        self._items.insert(-1, item)
 
     def remove_front(self):
         """ Elimina el primer elemento de la cola y devuelve su
@@ -31,8 +34,16 @@ class Deque:
         
     def remove_rear(self):
         """Quitar un elemento de la parte trasera de la cola."""
-        return self._items.pop(0)
+        return self._items.pop(-1)
 
     def size(self):
         """Obtener la cantidad de elementos en la etiqueta"""
         return len(self._items)
+
+def copiaCola( _cola: Deque)->Deque:
+    NewCola = Deque()
+    for i in range(0, _cola.size()):
+        _item = _cola.remove_front()
+        NewCola.add_front(_item)
+        _cola.add_rear(_item)
+    return NewCola
