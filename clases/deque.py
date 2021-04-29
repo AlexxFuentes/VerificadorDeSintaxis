@@ -4,7 +4,6 @@ fecha: 24/04/2021
 """
 from clases.stack import Stack
 
-
 class Deque:
     """Implementación de la cola como una lista"""
 
@@ -39,11 +38,3 @@ class Deque:
     def size(self):
         """Obtener la cantidad de elementos en la etiqueta"""
         return len(self._items)
-
-def copiaCola( _cola: Deque)->Deque:
-    NewCola = Deque()
-    for i in range(0, _cola.size()):
-        _item = _cola.remove_front()
-        NewCola.add_front(_item)
-        _cola.add_rear(_item)
-    return NewCola

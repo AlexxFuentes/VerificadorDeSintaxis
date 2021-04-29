@@ -1,8 +1,6 @@
 # Esta funcion tiene como proposito validar si la palabra recibida, es una palaba reservada
 # En el escenario de que sea reservada retornara un True, caso contrario False 
-
-def tokensTipoVariable(_token):
-    dictTiposVariables ={
+dictTiposVariables ={
         'int':"Tipo entero",
         'float':"Tipo flotante",
         'double':"tipo de dato para valores decimales",
@@ -14,13 +12,7 @@ def tokensTipoVariable(_token):
         'const':"Define una variable constante",
         'unsigned':"indica a la variable que no llevara signo",
     }
-    if _token in dictTiposVariables.keys():
-        return True
-    else:
-        return False
-
-def tokensCondicionales(_token):
-    dictCondicionales = {
+dictCondicionales = {
         'if': "Condicional if",
         'else': "parte de la estructura de control if, caso default",
         'do':"instruccion de hacer - mientras",
@@ -30,13 +22,7 @@ def tokensCondicionales(_token):
         'case':"Define los casos de switch",
         'default':"Define el caso default del switch",
     }
-    if _token in dictCondicionales.keys():
-        return True
-    else:
-        return False
-
-def tokensBibliotecas(_token):
-    dictBibliotecas ={
+dictBibliotecas ={
         'stdio.h':'Biblioteca',
         'fstream':'Biblioteca',
         'iosfwd':'Biblioteca',
@@ -57,17 +43,11 @@ def tokensBibliotecas(_token):
         'time':'Biblioteca',
         'thread':'Biblioteca',
     }
-    if _token in dictBibliotecas.keys():
-        return True
-    else:
-        return False
-  
-def tokensReservadas(palabra):
-    dict1 = { 
+dictReservadas = { 
         'main': "Inicio de funcion principal",
         'printf': "funcion que da un mensaje en cosola",
         'scanf': "Almacena Valores por el Usuario",
-        'include':"Incluye las declaraciones de otroa fichero",
+        'include': "Incluye las declaraciones de otroa fichero",
         'auto':" tipos automática",
         'break':"instruccion de salto",                                                
         'continue':"instruccion de salto",                                                              
@@ -93,13 +73,7 @@ def tokensReservadas(palabra):
         'static_cast': "conversion de tipos estatica", 
         'throw' : "expresion throw",
     }
-    if palabra in dict1.keys():
-        return True
-    else:
-        return False
-
-def tokensOperadores(operadores):
-    dict2 = { '::': "resolucion de ambito",
+dictOperadores = { '::': "resolucion de ambito",
               '.' : "seleccion de miembro",
               '->': "otra forma de seleccion de miembro",
               '[]': "subindice de matriz",
@@ -146,14 +120,13 @@ def tokensOperadores(operadores):
               '#': "ayuda a incluir libreria",
               '(': "Apertura de parentesis",
               ')': "Cierre de parentesis",
-              '{': "Apertura de parentesis",
-              '}': "Cierre de parentesis",
-              '[': "Apertura de parentesis",
-              ']': "Cierre de parentesis",
-
+              '{': "Apertura de llave",
+              '}': "Cierre de llave",
+              '[': "Apertura de corchete",
+              ']': "Cierre de corchete",
     }
-    if operadores in dict2.keys():
+def validadorDict(_token: str, _dictionary: dict):
+    if _token in _dictionary.keys():
         return True
     else:
         return False
-        

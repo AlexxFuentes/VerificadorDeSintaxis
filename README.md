@@ -1,4 +1,4 @@
-# VerificadorDeSintaxis
+# ValidadorDeSintaxis
 Proyecto: Algoritmos y Estructuras de Datos 
 
 NOMBRE DE LOS INTEGRANTES: GRUPO F
